@@ -1,0 +1,73 @@
+.song-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.song-wrapper .song-bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-position: center top;
+    background-size: cover;
+    filter: blur(10px);
+    -webkit-filter: blur(20px);
+}
+
+.song-wrapper .song-container {
+    z-index: 0;
+    text-align: center;
+}
+
+.song-wrapper .song-container .song-cover-border {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    padding: 1rem;
+    background: url("../img/wood-bg.jpg");
+    animation-direction: reverse;
+}
+
+.song-wrapper .song-container .song-cover-border img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.song-wrapper .song-container h2 {
+    margin-top: 2rem;
+    color: #FFF;
+}
+
+.song-wrapper .song-container h3 {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6)
+}
+
+.start-rotate-cover,
+.pause-rotate-cover {
+    animation: rotation 10s infinite linear;
+}
+
+.start-rotate-cover {
+    animation-play-state: running;
+}
+
+.pause-rotate-cover {
+    animation-play-state: paused;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
